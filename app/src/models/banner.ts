@@ -10,7 +10,6 @@ export enum BannerType {
   CherryPickConflictsFound = 'CherryPickConflictsFound',
   CherryPickUndone = 'CherryPickUndone',
   OpenThankYouCard = 'OpenThankYouCard',
-  SuccessfulSquash = 'SuccessfulSquash',
 }
 
 export type Banner =
@@ -77,11 +76,4 @@ export type Banner =
       readonly emoji: Map<string, string>
       readonly onOpenCard: () => void
       readonly onThrowCardAway: () => void
-    }
-  | {
-      readonly type: BannerType.SuccessfulSquash
-      /** number of commits squashed */
-      readonly count: number
-      /** callback to run when user clicks undo link in banner */
-      readonly onUndo: () => void
     }
