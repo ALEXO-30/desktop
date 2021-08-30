@@ -1,5 +1,6 @@
 import * as React from 'react'
-import { SuccessBanner } from './success-banner'
+import { Octicon, OcticonSymbol } from '../octicons'
+import { Banner } from './banner'
 
 export function SuccessfulMerge({
   ourBranch,
@@ -26,8 +27,11 @@ export function SuccessfulMerge({
     )
 
   return (
-    <SuccessBanner timeout={5000} onDismissed={onDismissed}>
+    <Banner id="successful-merge" timeout={5000} onDismissed={onDismissed}>
+      <div className="green-circle">
+        <Octicon className="check-icon" symbol={OcticonSymbol.check} />
+      </div>
       <div className="banner-message">{message}</div>
-    </SuccessBanner>
+    </Banner>
   )
 }
